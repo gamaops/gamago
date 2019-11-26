@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package gamago.common;
+
+option go_package = "github.com/gamaops/gamago/pkg/idl/gamago-common";
+
+message ResponseStatus {
+	message Error {
+		string slug = 1;
+		string message = 2;
+	}
+	repeated Error errors = 1;
+}
+
+message RequestSession {
+	string access_token = 1;
+	string locale = 2;
+	int64 timestamp = 3;
+}
+
+enum SearchTrashCan {
+	NO = 0;
+	YES = 1;
+	ONLY = 2;
+}
+
+enum ResultsOrder {
+	ASC = 0;
+	DESC = 1;
+}
+
+message SearchOptions {
+	string query = 1;
+	string sort_by = 2;
+	ResultsOrder sort_order = 3;
+	int64 limit = 4;
+	int64 offset = 5;
+	SearchTrashCan trash_can = 6;
+}
