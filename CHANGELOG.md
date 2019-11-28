@@ -1,3 +1,12 @@
+## 2019-11-28T10:30:38.233Z
+### 🆕 - add code or file(s) (project)
+
+#### none
+
+- Add SQL scroller
+
+-----------------------------
+
 ## 2019-11-26T10:47:13.416Z
 ### 🆕 - add code or file(s) (project)
 
