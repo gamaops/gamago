@@ -48,6 +48,7 @@ func (e *Elastic) IndexFromSQLRows(index string, rows *sql.Rows) (*ElasticBulkRe
 		buf.Write(data)
 		blk.Count++
 	}
+	e.Logger.Info(buf.String())
 	defer buf.Reset()
 	res, err := e.Client.Bulk(bytes.NewReader(buf.Bytes()), e.Client.Bulk.WithIndex(index))
 	if err != nil {
